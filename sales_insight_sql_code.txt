@@ -1,0 +1,26 @@
+Sales insight using SQL
+<----------****---------> 
+
+-- select * FROM sales.customers;
+-- select count(*) from sales.transactions;
+-- select * from sales.customers limit 8;
+-- select * from sales.transactions where market_code="Mark001";
+-- select count(*) from sales.transactions where market_code="Mark001";
+-- select * from sales.transactions where currency="USD";
+
+-- sales ke transactions and date table ke sare column (.*) show kro (i.e. join kro) , ON condition ki transaction ka order date 
+-- equal hai date column ke on the same year..
+
+-- code
+-- select sales.transactions.* , sales.date.* 
+-- FROM sales.transactions INNER JOIN sales.date 
+-- ON sales.transactions.order_date =sales.date.date where sales.date.year="2020";
+
+-- Find revenue in 2020
+-- select sum(sales.transactions.sales_amount)
+--  FROM sales.transactions INNER JOIN sales.date 
+--  ON sales.transactions.order_date
+-- =sales.date.date where sales.date.year="2020";
+
+-- find distinct product sold in chennai (market code is Mark_001 )
+-- select distinct product_code from sales.transactions where market_code="Mark001";
